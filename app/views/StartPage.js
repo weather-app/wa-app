@@ -13,14 +13,14 @@ import {
     Text,
     TouchableOpacity,
     ScrollView,
+    Button,
     View
 } from 'react-native';
 
 
 /* custom components import */
 
-import TopMenu from '../components/TopMenu';
-import TaskGroup from '../components/TaskGroup';
+import StartButton from '../components/StartButton';
 
 /* components styles */
 
@@ -44,25 +44,18 @@ class StartPage extends Component {
 
     render () {
         return  <View style={styles.container}>
-                    <TopMenu/>
 
-                    <Text style={styles.pageTitle}>Задачи</Text>
+                    <Image style={styles.backgroundImage}  source={require('../images/background.png')} />
 
-                    <TouchableOpacity style={styles.filterButton}>
-                        <Text style={styles.filterTitle}>Фильтр</Text>
+                    <Text style={styles.title}>Актуальная погода</Text>
+
+                    <StartButton text="Вы можите видеть погодные условия." image={require('../images/sun.png')} />
+                    <StartButton text="Получать уведомления об осадках заблаговременно для текуего местоположения" image={require('../images/notify.png')} />
+                    <StartButton text="Узнать с какой стороны приближаются к вам осадки и через какое время у вас будет дождь" image={require('../images/rain.png')} />
+
+                    <TouchableOpacity style={styles.button}>
+                        <Text>Начать использование</Text>
                     </TouchableOpacity>
-
-                    <ScrollView
-                        ref={(scrollView) => {_scrollView = scrollView;}}
-                        automaticallyAdjustContentInsets={false}
-                        scrollEventThrottle={200}
-                        style={styles.taskList}>
-
-                        {dates.map((date, index) => this.createTaskGroup(tasks.filter(t => t.date === date), index, date))}
-
-
-                    </ScrollView>
-
                 </View>;
     }
 }
