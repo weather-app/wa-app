@@ -26,35 +26,23 @@ import StartButton from '../components/StartButton';
 
 const styles = require('../../app/styles/')('startPage');
 
-/* data */
-const tasks = require('../data/tasks.json');
-const dates = [];
-
-tasks.forEach(t => {
-    if (dates.indexOf(t.date) === -1) {
-        dates.push(t.date)
-    }
-});
-
 class StartPage extends Component {
-
-    createTaskGroup (filteredTasks, index, date) {
-        return <TaskGroup key={index} date={date} tasks={filteredTasks}/>;
-    }
 
     render () {
         return  <View style={styles.container}>
 
                     <Image style={styles.backgroundImage}  source={require('../images/background.png')} />
 
-                    <Text style={styles.title}>Актуальная погода</Text>
+                    <Text style={styles.titleText}>Актуальная погода</Text>
 
                     <StartButton text="Вы можите видеть погодные условия." image={require('../images/sun.png')} />
                     <StartButton text="Получать уведомления об осадках заблаговременно для текуего местоположения" image={require('../images/notify.png')} />
                     <StartButton text="Узнать с какой стороны приближаются к вам осадки и через какое время у вас будет дождь" image={require('../images/rain.png')} />
 
-                    <TouchableOpacity style={styles.button}>
-                        <Text>Начать использование</Text>
+                    <TouchableOpacity style={styles.startButton}>
+                        <Text style={styles.startButtonText}>
+                            Начать использование
+                        </Text>
                     </TouchableOpacity>
                 </View>;
     }

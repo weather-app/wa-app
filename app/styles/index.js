@@ -11,9 +11,6 @@ const vh = width / 100 | 0;
 
 const styleFiles = {
     startPage: require('./startPage'),
-    taskGroup: require('./taskGroup'),
-    taskRow: require('./taskRow'),
-    topMenu: require('./topMenu'),
     startButton: require('./startButton')
 };
 

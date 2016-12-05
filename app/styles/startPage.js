@@ -13,13 +13,30 @@ module.exports = function (d) {
             width: d.dimentions.width,
             height: d.dimentions.height
         },
-        title: {
-            fontSize: 80 * d.x
+        titleText: {
+            fontSize: 75 * d.x,
+            width: d.dimentions.width,
+            textAlign : 'center',
+            lineHeight: 240* d.x,
+            color: 'white',
+            backgroundColor: 'transparent',
+            fontFamily: 'Helvetica-Light',
+            fontWeight: '200'
         },
-        button: {
+        startButton: {
             position: 'absolute',
             bottom: 0,
-            backgroundColor: '#078ae5'
+            backgroundColor: '#078ae5',
+            height: 120 * d.x,
+            width: d.dimentions.width
+        },
+        startButtonText: {
+            width: d.dimentions.width,
+            textAlign : 'center',
+            lineHeight: 120* d.x,
+            color: 'white',
+            fontFamily: 'Helvetica-Light',
+            fontWeight: '400'
         }
     }
 };

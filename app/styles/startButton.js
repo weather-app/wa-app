@@ -3,17 +3,20 @@ module.exports = function (d) {
     return {
         container: {
             backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            marginTop: d.vh * 5,
-            marginLeft: d.vh * 5,
-            marginRight: d.vh * 5
+            margin: d.vh * 5,
+            padding: d.vh * 5,
+            borderRadius: 20 * d.x,
+            alignItems: 'center'
         },
         text: {
             color: '#fff',
-            fontSize: 60 * d.x,
+            fontSize: 40 * d.x,
+            margin: 30 * d.x,
             textAlign: 'center'
         },
         image: {
-            height: 60 * d.x
+            height: 90 * d.x,
+            resizeMode: 'contain',
         }
     }
 };
