@@ -39,7 +39,9 @@ class StartPage extends Component {
                     <StartButton text="Получать уведомления об осадках заблаговременно для текуего местоположения" image={require('../images/notify.png')} />
                     <StartButton text="Узнать с какой стороны приближаются к вам осадки и через какое время у вас будет дождь" image={require('../images/rain.png')} />
 
-                    <TouchableOpacity style={styles.startButton}>
+                    <TouchableOpacity style={styles.startButton}
+                                      onPress={() => false}
+                    >
                         <Text style={styles.startButtonText}>
                             Начать использование
                         </Text>
