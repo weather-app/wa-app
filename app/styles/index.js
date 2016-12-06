@@ -11,7 +11,9 @@ const vh = width / 100 | 0;
 
 const styleFiles = {
     startPage: require('./startPage'),
-    startButton: require('./startButton')
+    startButton: require('./startButton'),
+    weatherButton: require('./weatherButton'),
+    weatherPage: require('./weatherPage')
 };
 
 module.exports = function (m) {

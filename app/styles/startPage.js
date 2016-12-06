@@ -17,7 +17,7 @@ module.exports = function (d) {
             fontSize: 75 * d.x,
             width: d.dimentions.width,
             textAlign : 'center',
-            lineHeight: 240* d.x,
+            // lineHeight: 240* d.x,
             color: 'white',
             backgroundColor: 'transparent',
             fontFamily: 'Helvetica-Light',
@@ -33,7 +33,7 @@ module.exports = function (d) {
         startButtonText: {
             width: d.dimentions.width,
             textAlign : 'center',
-            lineHeight: 120* d.x,
+            // lineHeight: 120* d.x,
             color: 'white',
             fontFamily: 'Helvetica-Light',
             fontWeight: '400'
