@@ -38,11 +38,20 @@ class Weather extends Component {
                         temp="21"
                     />
                     <WeatherButton
+                        time="10:13"
+                        city="Сочи"
+                        temp="32"
+                    />
+                    <WeatherButton
+                        time="17:13"
+                        city="Хабаровск"
+                        temp="25"
+                    />
+                    <WeatherButton
                         time="17:13"
                         city="Нижний Новгород"
                         temp="25"
-                    />
-
+                     />
                 </View>;
     }
 }
