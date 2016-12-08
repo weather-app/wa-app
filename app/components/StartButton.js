@@ -1,5 +1,5 @@
 /*
-    Start Page Component
+    Start Button Component
  */
 
 /*
