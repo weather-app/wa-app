@@ -6,7 +6,7 @@ module.exports = function (d) {
             padding: 60 * d.x,
             paddingTop: 20 * d.x,
             paddingBottom: 20 * d.x,
-            marginBottom: -1 * d.x,
+            // marginBottom: -1 * d.x,
 
         },
         geoposition: {

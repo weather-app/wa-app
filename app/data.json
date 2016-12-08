@@ -1,0 +1,32 @@
+{
+  "cities": [
+    {
+      "name": "Москва",
+      "region": "Останкинский район",
+      "temp": 21,
+      "weatherType": "clear",
+      "time": "10:15"
+    },
+    {
+      "name": "Сочи",
+      "region": "",
+      "temp": 32,
+      "weatherType": "cloudy",
+      "time": "12:15"
+    },
+    {
+      "name": "Хабаровск",
+      "region": "",
+      "temp": 25,
+      "weatherType": "small-cloudy",
+      "time": "09:15"
+    },
+    {
+      "name": "Нижний Новгород",
+      "region": "",
+      "temp": 25,
+      "weatherType": "hardly-cloudy",
+      "time": "14:15"
+    }
+  ]
+}
