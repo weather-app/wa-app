@@ -13,7 +13,6 @@ import {
     Text,
     TouchableOpacity,
     ScrollView,
-    Button,
     View
 } from 'react-native';
 
