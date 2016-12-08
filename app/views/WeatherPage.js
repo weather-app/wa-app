@@ -30,7 +30,6 @@ class Weather extends Component {
 
     render () {
         return  <View style={styles.container}>
-
                     <WeatherButton
                         time="10:13"
                         city="Москва"

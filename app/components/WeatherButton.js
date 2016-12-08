@@ -15,6 +15,8 @@ import {
     Image
 } from 'react-native';
 
+//import Swipeout from 'react-native-swipeout';
+
 /* custom components import */
 
 /* components styles */
@@ -27,7 +29,7 @@ class WeatherButton extends Component {
     }
 
     render () {
-        return  <TouchableOpacity style={styles.container}>
+        return  <TouchableOpacity style={styles.container} onPress={() => {return false}}>
                     <Text style={styles.time}>{this.props.time}</Text>
                     <Text style={styles.city}>{this.props.city}</Text>
                     <Text style={styles.region}>{this.props.region || ''}</Text>

@@ -6,7 +6,8 @@ module.exports = function (d) {
             width: d.dimentions.width,
             padding: 60 * d.x,
             paddingTop: 20 * d.x,
-            paddingBottom: 20 * d.x
+            paddingBottom: 20 * d.x,
+            marginBottom: -1 * d.x
         },
         time: {
             color: '#fff'
