@@ -18,7 +18,9 @@ const styleFiles = {
     cityPage: require('./cityPage'),
     dayWeatherBlock: require('./dayWeatherBlock'),
     weekWeatherBlock: require('./weekWeatherBlock'),
-    cityInfo: require('./cityInfo')
+    cityInfo: require('./cityInfo'),
+    citySearch: require('./citySearch'),
+    citySearchInput: require('./citySearchInput')
 };
 
 module.exports = function (m) {
