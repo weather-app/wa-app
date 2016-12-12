@@ -20,6 +20,7 @@ import {
 
 import StartPage from '../views/StartPage';
 import CitiesList from '../views/CitiesList';
+import CityPage from '../views/CityPage';
 
 /*
     components styles
@@ -42,7 +43,7 @@ class App extends Component {
             <Navigator
                 style={styles.container}
                 initialRoute={{
-                    component: CitiesList
+                    component: CityPage
                 }}
                 renderScene={(route, navigator) => {
                     let Component = route.component,

@@ -34,9 +34,9 @@ class StartPage extends Component {
 
                     <Text style={styles.titleText}>Актуальная погода</Text>
 
-                    <StartButton text="Вы можите видеть погодные условия." image={require('../images/icons/i-sun.png')} />
+                    <StartButton text="Вы можите видеть погодные условия." image={require('../images/icons/i-sun-block.png')} />
                     <StartButton text="Получать уведомления об осадках заблаговременно для текуего местоположения" image={require('../images/icons/i-notify.png')} />
-                    <StartButton text="Узнать с какой стороны приближаются к вам осадки и через какое время у вас будет дождь" image={require('../images/icons/i-rain.png')} />
+                    <StartButton text="Узнать с какой стороны приближаются к вам осадки и через какое время у вас будет дождь" image={require('../images/icons/i-rain-block.png')} />
 
                     <TouchableOpacity style={styles.startButton}
                                       onPress={() => false}

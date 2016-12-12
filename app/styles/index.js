@@ -13,7 +13,8 @@ const styleFiles = {
     startPage: require('./startPage'),
     startPageElement: require('./startPageElement'),
     cityListElement: require('./cityListElement'),
-    citiesList: require('./citiesList')
+    citiesList: require('./citiesList'),
+    cityPage: require('./cityPage')
 };
 
 module.exports = function (m) {
