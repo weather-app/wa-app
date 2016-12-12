@@ -30,18 +30,18 @@ var data = require('../data.json');
 class Weather extends Component {
 
     render () {
-        var currentTime = new Date();
         return  <View style={styles.container}>
-                    {data.cities.map(function(city, index){
+                    {data.cities.map((city, index) => {
                         return <WeatherButton
-                            cityId=index
-                            time=city.time
-                            city=city.name
-                            region=city.region
-                            temp=city.temp
-                            weatherType=city.weatherType
+                            key={'wb-' + index}
+                            cityId={index}
+                            time={city.time}
+                            city={city.name}
+                            region={city.region}
+                            temp={city.temp}
+                            weatherType={city.weatherType}
                         />
-                    })};
+                    })}
                     <View style={styles.addButtonContainer}>
                         <TouchableOpacity style={styles.addButton}
                                           onPress={() => {return false}}
