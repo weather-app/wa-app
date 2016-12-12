@@ -44,7 +44,7 @@ class App extends Component {
             <Navigator
                 style={styles.container}
                 initialRoute={{
-                    component: CitySearch
+                    component: CityPage
                 }}
                 renderScene={(route, navigator) => {
                     let Component = route.component,
