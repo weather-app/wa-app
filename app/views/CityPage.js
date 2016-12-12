@@ -11,6 +11,7 @@ import React, {Component} from 'react';
 
 import {
     Image,
+    ScrollView,
     Text,
     TouchableOpacity,
     View
@@ -45,9 +46,11 @@ class CityPage extends Component {
 
                     <CityInfo />
 
-                    <DayWeatherBlock />
+                    <ScrollView>
+                        <DayWeatherBlock />
 
-                    <WeekWeatherBlock />
+                        <WeekWeatherBlock />
+                    </ScrollView>
                 </View>
     }
 }
