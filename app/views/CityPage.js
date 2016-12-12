@@ -20,6 +20,7 @@ import {
 
 import DayWeatherBlock from '../components/DayWeatherBlock';
 import WeekWeatherBlock from '../components/WeekWeatherBlock';
+import CityInfo from '../components/CityInfo';
 
 /* components styles */
 
@@ -41,6 +42,8 @@ class CityPage extends Component {
                     <Text style={styles.cityName}>Москва</Text>
                     <Text style={styles.cityDistrict}>Останкинский район</Text>
                     <Text style={styles.weatherDescription}>Ясно, дымка</Text>
+
+                    <CityInfo />
 
                     <DayWeatherBlock />
 
