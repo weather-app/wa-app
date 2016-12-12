@@ -44,7 +44,8 @@ module.exports = function (d) {
             color: 'white',
             fontSize: 45 * d.x,
             fontWeight: '100',
-            fontFamily: 'Helvetica-Light'
+            fontFamily: 'Helvetica-Light',
+            marginBottom: 30 * d.x
         }
     }
 };

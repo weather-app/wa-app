@@ -20,7 +20,7 @@ import {
 
 const styles = require('../../app/styles/')('dayWeatherBlock');
 
-class StartButton extends Component {
+class DayWeatherBlock extends Component {
     constructor (props) {
         super(props);
     }
@@ -87,5 +87,5 @@ class StartButton extends Component {
     }
 }
 
-export default StartButton;
+export default DayWeatherBlock;
 

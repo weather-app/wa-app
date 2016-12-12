@@ -19,6 +19,7 @@ import {
 /* custom components import */
 
 import DayWeatherBlock from '../components/DayWeatherBlock';
+import WeekWeatherBlock from '../components/WeekWeatherBlock';
 
 /* components styles */
 
@@ -42,6 +43,8 @@ class CityPage extends Component {
                     <Text style={styles.weatherDescription}>Ясно, дымка</Text>
 
                     <DayWeatherBlock />
+
+                    <WeekWeatherBlock />
                 </View>
     }
 }
