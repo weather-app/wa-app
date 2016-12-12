@@ -16,8 +16,8 @@ module.exports = function (d) {
         titleText: {
             fontSize: 75 * d.x,
             width: d.dimentions.width,
+            marginTop: 50 * d.x,
             textAlign : 'center',
-            //height: 240* d.x,
             color: 'white',
             backgroundColor: 'transparent',
             fontFamily: 'Helvetica-Light',

@@ -5,7 +5,8 @@
       "region": "Останкинский район",
       "temp": 21,
       "weatherType": "clear",
-      "time": "10:15"
+      "time": "10:15",
+      "current": true
     },
     {
       "name": "Сочи",

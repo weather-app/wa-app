@@ -19,7 +19,7 @@ import {
 */
 
 import StartPage from '../views/StartPage';
-import WeatherPage from '../views/WeatherPage';
+import CitiesList from '../views/CitiesList';
 
 /*
     components styles
@@ -42,8 +42,7 @@ class App extends Component {
             <Navigator
                 style={styles.container}
                 initialRoute={{
-                    title: 'Start Page',
-                    component: WeatherPage
+                    component: CitiesList
                 }}
                 renderScene={(route, navigator) => {
                     let Component = route.component,

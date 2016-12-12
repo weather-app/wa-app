@@ -19,7 +19,7 @@ import {
 
 /* components styles */
 
-const styles = require('../../app/styles/')('startButton');
+const styles = require('../../app/styles/')('startPageElement');
 
 class StartButton extends Component {
     constructor (props) {

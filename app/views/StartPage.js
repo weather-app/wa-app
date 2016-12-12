@@ -19,7 +19,7 @@ import {
 
 /* custom components import */
 
-import StartButton from '../components/StartButton';
+import StartButton from '../components/StartPageElement';
 
 /* components styles */
 

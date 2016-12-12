@@ -22,7 +22,7 @@ import Swipeout from 'react-native-swipeout';
 
 /* components styles */
 
-const styles = require('../../app/styles/')('weatherButton');
+const styles = require('../../app/styles/')('cityListElement');
 
 const weatherBgs = {
     clear: require('../images/bg/bg-clear.png'),

@@ -19,11 +19,11 @@ import {
 
 /* custom components import */
 
-import WeatherButton from '../components/WeatherButton';
+import WeatherButton from '../components/CityListElement';
 
 /* components styles */
 
-const styles = require('../../app/styles/')('weatherPage');
+const styles = require('../../app/styles/')('citiesList');
 
 var data = require('../data.json');
 
@@ -35,6 +35,7 @@ class Weather extends Component {
                         return <WeatherButton
                             key={'wb-' + index}
                             cityId={index}
+                            current={city.current}
                             time={city.time}
                             city={city.name}
                             region={city.region}
