@@ -1,6 +1,6 @@
 
 /*
- Weather Cities Screen View
+    City Page
  */
 
 /*
@@ -17,6 +17,8 @@ import {
 } from 'react-native';
 
 /* custom components import */
+
+import DayWeatherBlock from '../components/DayWeatherBlock';
 
 /* components styles */
 
@@ -38,6 +40,8 @@ class CityPage extends Component {
                     <Text style={styles.cityName}>Москва</Text>
                     <Text style={styles.cityDistrict}>Останкинский район</Text>
                     <Text style={styles.weatherDescription}>Ясно, дымка</Text>
+
+                    <DayWeatherBlock />
                 </View>
     }
 }

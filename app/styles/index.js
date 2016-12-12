@@ -15,7 +15,8 @@ const styleFiles = {
     startPageElement: require('./startPageElement'),
     cityListElement: require('./cityListElement'),
     citiesList: require('./citiesList'),
-    cityPage: require('./cityPage')
+    cityPage: require('./cityPage'),
+    dayWeatherBlock: require('./dayWeatherBlock')
 };
 
 module.exports = function (m) {
