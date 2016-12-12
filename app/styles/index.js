@@ -3,6 +3,7 @@ import {Dimensions} from 'react-native';
 const dimentions = Dimensions.get('window'),
     {
         width,
+        height
     } = dimentions;
 
 const x = width / 1024;
