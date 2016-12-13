@@ -34,7 +34,6 @@ module.exports = function (d) {
         startButtonText: {
             width: d.dimentions.width,
             textAlign : 'center',
-            // lineHeight: 120* d.x,
             color: 'white',
             fontFamily: 'Helvetica-Light',
             fontWeight: '400'

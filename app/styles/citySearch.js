@@ -7,7 +7,7 @@ module.exports = function (d) {
             backgroundColor: '#383838'
         },
         textInput: {
-            
+
         }
     }
 };

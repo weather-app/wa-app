@@ -11,6 +11,7 @@ import React, {Component} from 'react';
 import {
     TextInput,
     View,
+    Image,
     TouchableOpacity,
     Text
 } from 'react-native';
@@ -42,8 +43,15 @@ class CitySearchInput extends Component {
                     <TextInput
                         value={this.state.text}
                         style={styles.textInput}
+                        placeholder={'Введите город'}
+                        placeholderTextColor={'#c5c5c5'}
                         onChangeText={this.onTextChange.bind(this)}
                     />
+                    <TouchableOpacity style={styles.geoButton}>
+                        <Image source={require('../images/icons/i-geoposition.png')}
+                               style={styles.geoButtonImage}
+                        />
+                    </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.clearButtonContainer}
                         onPress={() => this.onTextChange('')}

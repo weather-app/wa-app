@@ -1,6 +1,6 @@
 
 /*
-    City Page
+    City Search Page
  */
 
 /*
@@ -36,6 +36,12 @@ class CitySearch extends Component {
     render () {
         return  <View style={styles.container}>
                     <CitySearchInput />
+
+                    <View style={styles.variantsContainer}>
+                        <View>
+
+                        </View>
+                    </View>
                 </View>
     }
 }
