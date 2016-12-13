@@ -1,9 +1,14 @@
 
 module.exports = function (d) {
     return {
+        container: {
+            height: d.dimentions.height,
+            width: d.dimentions.width
+        },
         paginator: {
             position: 'absolute',
-            top: 0
+            top: -1200 * d.x,
+            paddingTop: 0
         },
         bgImage: {
             position: 'absolute',

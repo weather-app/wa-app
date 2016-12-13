@@ -32,8 +32,8 @@ const styles = require('../../app/styles/')('cityPage');
 class CityPage extends Component {
 
     render () {
-        return <View>
-                    <Swiper paginationStyle={styles.paginator}>
+        return <View  style={styles.container}>
+                    <Swiper  paginationStyle={styles.paginator}>
                         <View style={styles.container}>
                             <Image style={styles.bgImage}
                                    source={require('../images/bg/bg-dayly-cloudy.png')}/>
@@ -50,7 +50,7 @@ class CityPage extends Component {
                             </ScrollView>
                         </View>
 
-                        <View style={styles.container}>
+                        <View  style={styles.container}>
                             <Image style={styles.bgImage}
                                    source={require('../images/bg/bg-sunset-cloudy.png')}/>
                             <Text style={styles.cityName}>Санкт-Петербург</Text>
