@@ -2,8 +2,8 @@
 module.exports = function (d) {
     return {
         container: {
-            width: d.dimentions.width,
-            height: d.dimentions.height,
+            width: d.dimensions.width,
+            height: d.dimensions.height,
             backgroundColor: '#383838'
         },
         noFoundBlock: {

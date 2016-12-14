@@ -1,10 +1,10 @@
 import {Dimensions} from 'react-native';
 
-const dimentions = Dimensions.get('window'),
+const dimensions = Dimensions.get('window'),
     {
         width,
         height
-    } = dimentions;
+    } = dimensions;
 
 const x = width / 1024;
 const vw = width / 100 | 0;
@@ -20,12 +20,13 @@ const styleFiles = {
     weekWeatherBlock: require('./weekWeatherBlock'),
     cityInfo: require('./cityInfo'),
     citySearch: require('./citySearch'),
-    citySearchInput: require('./citySearchInput')
+    citySearchInput: require('./citySearchInput'),
+    landingPage: require('./landingPage')
 };
 
 module.exports = function (m) {
     return styleFiles[m].bind(this)({
-        dimentions: dimentions,
+        dimensions: dimensions,
         x: x,
         vw: vw,
         vh: vh

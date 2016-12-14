@@ -2,8 +2,8 @@
 module.exports = function (d) {
     return {
         container: {
-            height: d.dimentions.height,
-            width: d.dimentions.width
+            height: d.dimensions.height,
+            width: d.dimensions.width
         },
         paginator: {
             position: 'absolute',
@@ -13,8 +13,8 @@ module.exports = function (d) {
         bgImage: {
             position: 'absolute',
             resizeMode: 'cover',
-            width: d.dimentions.width,
-            height: d.dimentions.height,
+            width: d.dimensions.width,
+            height: d.dimensions.height,
         },
         menuButton: {
             position: 'absolute',
@@ -27,7 +27,7 @@ module.exports = function (d) {
             resizeMode: 'cover'
         },
         cityName: {
-            width: d.dimentions.width,
+            width: d.dimensions.width,
             textAlign: 'center',
             color: 'white',
             fontSize: 80 * d.x,
@@ -36,7 +36,7 @@ module.exports = function (d) {
             fontFamily: 'Helvetica-Light'
         },
         cityDistrict: {
-            width: d.dimentions.width,
+            width: d.dimensions.width,
             textAlign: 'center',
             color: 'white',
             fontSize: 35 * d.x,
@@ -44,7 +44,7 @@ module.exports = function (d) {
             fontFamily: 'Helvetica-Light'
         },
         weatherDescription: {
-            width: d.dimentions.width,
+            width: d.dimensions.width,
             textAlign: 'center',
             color: 'white',
             fontSize: 45 * d.x,

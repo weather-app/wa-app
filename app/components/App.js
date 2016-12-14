@@ -22,6 +22,7 @@ import StartPage from '../views/StartPage';
 import CitiesList from '../views/CitiesList';
 import CityPage from '../views/CityPage';
 import CitySearch from '../views/CitySearch';
+import LandingPage from '../views/LandingPage';
 
 /*
     components styles
@@ -44,7 +45,7 @@ class App extends Component {
             <Navigator
                 style={styles.container}
                 initialRoute={{
-                    component: CitySearch
+                    component: LandingPage
                 }}
                 renderScene={(route, navigator) => {
                     let Component = route.component,

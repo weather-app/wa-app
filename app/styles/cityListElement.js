@@ -2,11 +2,10 @@ module.exports = function (d) {
     return {
         container: {
             backgroundColor: 'rgba(0, 85, 218, 0)',
-            width: d.dimentions.width,
+            width: d.dimensions.width,
             padding: 60 * d.x,
             paddingTop: 20 * d.x,
-            paddingBottom: 20 * d.x,
-            // marginBottom: -1 * d.x,
+            paddingBottom: 20 * d.x
 
         },
         geoposition: {
@@ -35,7 +34,7 @@ module.exports = function (d) {
         },
         weatherTypeImage: {
             position: 'absolute',
-            width: d.dimentions.width,
+            width: d.dimensions.width,
             resizeMode: 'cover'
         }
     }
