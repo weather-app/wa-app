@@ -39,6 +39,13 @@ class CitySearch extends Component {
 
                     <View style={styles.variantsContainer}>
                         <View>
+                            <Text >Ничего не найдено, попробуйте воспользоваться геопоиском, нажав на кнопку</Text>
+
+                            <TouchableOpacity style={styles.geoButton}>
+                                <Image source={require('../images/icons/i-geoposition.png')}
+                                       style={styles.geoButtonImage}
+                                />
+                            </TouchableOpacity>
 
                         </View>
                     </View>
