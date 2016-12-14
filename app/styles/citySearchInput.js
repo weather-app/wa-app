@@ -26,7 +26,7 @@ module.exports = function (d) {
         },
         clearButtonText: {
             color: '#fff',
-            backgroundColor: '#000'
+            fontFamily: 'Helvetica-Light'
         },
         geoButtonImage: {
             height: 50 * d.x,
