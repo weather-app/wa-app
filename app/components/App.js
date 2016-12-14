@@ -13,6 +13,16 @@ import {
     Navigator,
 } from 'react-native';
 
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+import * as reducers from '../reducers';
+
+
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const reducer = combineReducers(reducers);
+const store = createStoreWithMiddleware(reducer);
 
 /*
     custom components import
@@ -42,18 +52,9 @@ class App extends Component {
 
     render() {
         return (
-            <Navigator
-                style={styles.container}
-                initialRoute={{
-                    component: LandingPage
-                }}
-                renderScene={(route, navigator) => {
-                    let Component = route.component,
-                        props =  {route: route, navigator: navigator, ...route.passProps};
-                    return <Component {...props} />;
-                }}
-                navigationBarHidden={true}
-            />
+            <Provider store={store}>
+                <LandingPage />
+            </Provider>
         );
     }
 
