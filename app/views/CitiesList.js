@@ -25,16 +25,41 @@ import WeatherButton from '../components/CityListElement';
 
 const styles = require('../../app/styles/')('citiesList');
 
-var data = require('../data.json');
+import Cities from '../Cities';
 
 class Weather extends Component {
 
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            cities: Cities.getCities()
+        };
+
+    }
+
+    onChange_ = () => {
+        alert('Change');
+        this.setState( {
+            cities: Cities.getCities()
+        });
+    };
+
+    componentWillMount()
+    {
+        Cities.addListener(this.onChange_);
+    }
+    componentWillUnmount()
+    {
+        Cities.removeListener(this.onChange_);
+    }
+
     render () {
         return  <View style={styles.container}>
-                    {data.cities.map((city, index) => {
+                    {this.state.cities.map((city) => {
                         return <WeatherButton
-                            key={'wb-' + index}
-                            cityId={index}
+                            key={'wb-' + city.cityId}
+                            cityId={city.cityId}
                             current={city.current}
                             time={city.time}
                             city={city.name}

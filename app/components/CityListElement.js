@@ -20,6 +20,9 @@ import Swipeout from 'react-native-swipeout';
 
 /* custom components import */
 
+import Cities from '../Cities';
+import CityPage from '../views/CityPage';
+
 /* components styles */
 
 const styles = require('../../app/styles/')('cityListElement');
@@ -32,39 +35,40 @@ const weatherBgs = {
 };
 
 class WeatherButton extends Component {
-    constructor (props) {
-        super(props);
-        this.state= {isVisible: true};
-    }
 
+    removeCity = () => {
+        Cities.removeCity(this.props.cityId);
+    };
+
+
+
+    navigateToCity = () => {
+        this.props.navigator.push({
+            component: CityPage
+        });
+    };
+    
     render () {
         var swipeoutBtns = [
             {
                 text: 'Удалить',
                 backgroundColor: '#ff4646',
-                onPress: () => {
-                    this.setState({isVisible: false});
-                }
+                onPress: this.removeCity
             }
         ];
-        if (this.state.isVisible) {
-            return <Swipeout right={swipeoutBtns}
-                             autoClose={true}
-                             close={false}
-            >
-                <TouchableOpacity style={styles.container} onPress={() => {
-                    return false
-                }}>
-                    <Image style={styles.weatherTypeImage} source={weatherBgs[this.props.weatherType ? this.props.weatherType : 'clear']} />
-                    <Text style={styles.time}>{this.props.time}</Text>
-                    {this.props.current ? <Image style={styles.geoposition} source={require('../images/icons/i-geoposition.png')}/> : false }
-                    <Text style={styles.city}>{this.props.city}</Text>
-                    <Text style={styles.region}>{this.props.region || ''}</Text>
-                    <Text style={styles.temp}>{this.props.temp}°</Text>
-                </TouchableOpacity>
-            </Swipeout>
-        }
-        return false;
+        return <Swipeout right={swipeoutBtns}
+                         autoClose={true}
+                         close={false}
+        >
+            <TouchableOpacity style={styles.container}>
+                <Image style={styles.weatherTypeImage} source={weatherBgs[this.props.weatherType ? this.props.weatherType : 'clear']} />
+                <Text style={styles.time}>{this.props.time}</Text>
+                {this.props.current ? <Image style={styles.geoposition} source={require('../images/icons/i-geoposition.png')}/> : false }
+                <Text style={styles.city}>{this.props.city}</Text>
+                <Text style={styles.region}>{this.props.region || ''}</Text>
+                <Text style={styles.temp}>{this.props.temp}°</Text>
+            </TouchableOpacity>
+        </Swipeout>;
     }
 
 }

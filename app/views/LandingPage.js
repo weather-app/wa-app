@@ -19,11 +19,19 @@ import {
 
 /* custom components import */
 
+import Weather from './CitiesList';
+
 /* components styles */
 
 const styles = require('../../app/styles/')('landingPage');
 
 class LandingPage extends Component {
+
+    navigateToMainPage = () => {
+        this.props.navigator.push({
+            component: Weather
+        });
+    };
 
     render () {
         return <View  style={styles.container}>
@@ -43,7 +51,7 @@ class LandingPage extends Component {
                         <Text style={styles.description}>Для использования этих функций необходимо разрешение на использования Центра уведомлений.</Text>
                     </View>
 
-                    <TouchableOpacity style={styles.acceptButton}>
+                    <TouchableOpacity style={styles.acceptButton} onPress={this.navigateToMainPage}>
                         <Text style={styles.acceptButtonText}>Да, я понимаю</Text>
                     </TouchableOpacity>
                 </View>

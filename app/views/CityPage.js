@@ -24,6 +24,7 @@ import Swiper from 'react-native-swiper';
 import DayWeatherBlock from '../components/DayWeatherBlock';
 import WeekWeatherBlock from '../components/WeekWeatherBlock';
 import CityInfo from '../components/CityInfo';
+import Cities from '../Cities';
 
 /* components styles */
 
@@ -32,6 +33,9 @@ const styles = require('../../app/styles/')('cityPage');
 class CityPage extends Component {
 
     render () {
+
+        var cityInfo = Cities.getInfo(this.props.cityId);
+
         return <View  style={styles.container}>
                     <Swiper  paginationStyle={styles.paginator}>
                         <View style={styles.container}>
@@ -41,7 +45,7 @@ class CityPage extends Component {
                             <Text style={styles.cityDistrict}>Останкинский район</Text>
                             <Text style={styles.weatherDescription}>Ясно, дымка</Text>
 
-                            <CityInfo />
+                            <CityInfo cityId={this.props.cityId}/>
 
                             <ScrollView>
                                 <DayWeatherBlock />
