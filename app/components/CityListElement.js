@@ -41,10 +41,12 @@ class WeatherButton extends Component {
     };
 
 
-
     navigateToCity = () => {
         this.props.navigator.push({
-            component: CityPage
+            component: CityPage,
+            passProps: {
+                cityId: this.props.cityId
+            }
         });
     };
     
@@ -60,7 +62,7 @@ class WeatherButton extends Component {
                          autoClose={true}
                          close={false}
         >
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={this.navigateToCity}>
                 <Image style={styles.weatherTypeImage} source={weatherBgs[this.props.weatherType ? this.props.weatherType : 'clear']} />
                 <Text style={styles.time}>{this.props.time}</Text>
                 {this.props.current ? <Image style={styles.geoposition} source={require('../images/icons/i-geoposition.png')}/> : false }

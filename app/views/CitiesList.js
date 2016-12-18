@@ -65,6 +65,7 @@ class Weather extends Component {
                             region={city.region}
                             temp={city.temp}
                             weatherType={city.weatherType}
+                            navigator={this.props.navigator}
                         />
                     })}
                     <View style={styles.addButtonContainer}>

@@ -34,41 +34,28 @@ class CityPage extends Component {
 
     render () {
 
-        var cityInfo = Cities.getInfo(this.props.cityId);
+        let infos = Cities.getCities();
+        let swipeIndex = infos.findIndex(info => info.cityId === this.props.cityId);
 
         return <View  style={styles.container}>
-                    <Swiper  paginationStyle={styles.paginator}>
-                        <View style={styles.container}>
-                            <Image style={styles.bgImage}
-                                   source={require('../images/bg/bg-dayly-cloudy.png')}/>
-                            <Text style={styles.cityName}>Москва</Text>
-                            <Text style={styles.cityDistrict}>Останкинский район</Text>
-                            <Text style={styles.weatherDescription}>Ясно, дымка</Text>
+                    <Swiper  paginationStyle={styles.paginator} index={swipeIndex}>
+                        {infos.map(city => {
+                            return <View style={styles.container} key={city.cityId}>
+                                <Image style={styles.bgImage}
+                                       source={require('../images/bg/bg-dayly-cloudy.png')}/>
+                                <Text style={styles.cityName}>{city.name}</Text>
+                                <Text style={styles.cityDistrict}>{city.region}</Text>
+                                <Text style={styles.weatherDescription}>Ясно, дымка</Text>
 
-                            <CityInfo cityId={this.props.cityId}/>
+                                <CityInfo cityId={city.cityId}/>
 
-                            <ScrollView>
-                                <DayWeatherBlock />
+                                <ScrollView>
+                                    <DayWeatherBlock cityId={city.cityId} />
 
-                                <WeekWeatherBlock />
-                            </ScrollView>
-                        </View>
-
-                        <View  style={styles.container}>
-                            <Image style={styles.bgImage}
-                                   source={require('../images/bg/bg-sunset-cloudy.png')}/>
-                            <Text style={styles.cityName}>Санкт-Петербург</Text>
-                            <Text style={styles.cityDistrict}>Останкинский район</Text>
-                            <Text style={styles.weatherDescription}>Ясно, дымка</Text>
-
-                            <CityInfo />
-
-                            <ScrollView>
-                                <DayWeatherBlock />
-
-                                <WeekWeatherBlock />
-                            </ScrollView>
-                        </View>
+                                    <WeekWeatherBlock cityId={city.cityId} />
+                                </ScrollView>
+                            </View>
+                        })}
                     </Swiper>
 
                     <TouchableOpacity style={styles.menuButton}

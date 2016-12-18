@@ -4,6 +4,17 @@ let data = require('./data.json').cities;
 let listeners = [];
 
 export default {
+    /**
+     * @return {!Array.<{
+     *        cityId: number,
+     *        name: string,
+     *        region: string,
+     *        temp: number,
+     *        weatherType: string,
+     *        time: string,
+     *        current: boolean
+     * }>}
+     */
     getCities: function() {
         return data;
     },
@@ -11,6 +22,18 @@ export default {
         data = data.filter(c => c.cityId !== cityId);
         listeners.forEach(func => func.call(null));
     },
+    /**
+     * @param {number} cityId
+     * @returns {{
+     *        cityId: number,
+     *        name: string,
+     *        region: string,
+     *        temp: number,
+     *        weatherType: string,
+     *        time: string,
+     *        current: boolean
+     * }}
+     */
     getInfo: function(cityId) {
         return data.find(c => c.cityId === cityId);
     },
