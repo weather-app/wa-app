@@ -39,7 +39,6 @@ class Weather extends Component {
     }
 
     onChange_ = () => {
-        alert('Change');
         this.setState( {
             cities: Cities.getCities()
         });

@@ -16,7 +16,7 @@ export default {
     },
     addListener: function(func) {
         let index = listeners.indexOf(func);
-        if (index !== -1)
+        if (index === -1)
             listeners.push(func);
     },
     removeListener: function(func) {
