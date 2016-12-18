@@ -33,24 +33,32 @@ class Weather extends Component {
     {
         super(props);
         this.state = {
-            cities: Cities.getCities()
+            cities: Cities.getCities(),
+            temp: []
         };
-
     }
 
-    onChange_ = () => {
-        this.setState( {
-            cities: Cities.getCities()
+    onCityInfoChange_ = () => {
+        this.setState((prevState) => {
+            return {
+                cities: Cities.getCities(),
+                ...prevState
+            }
         });
     };
 
     componentWillMount()
     {
-        Cities.addListener(this.onChange_);
+        Cities.addListener(this.onCityInfoChange_);
     }
     componentWillUnmount()
     {
-        Cities.removeListener(this.onChange_);
+        Cities.removeListener(this.onCityInfoChange_);
+    }
+
+    componentDidMount()
+    {
+
     }
 
     render () {
