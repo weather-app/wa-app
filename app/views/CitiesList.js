@@ -68,11 +68,6 @@ class Weather extends Component {
                             key={'wb-' + city.cityId}
                             cityId={city.cityId}
                             current={city.current}
-                            time={city.time}
-                            city={city.name}
-                            region={city.region}
-                            temp={city.temp}
-                            weatherType={city.weatherType}
                             navigator={this.props.navigator}
                         />
                     })}
