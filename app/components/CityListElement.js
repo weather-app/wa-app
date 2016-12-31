@@ -21,6 +21,7 @@ import Swipeout from 'react-native-swipeout';
 /* custom components import */
 
 import Cities from '../Cities';
+import Weather from '../Weather';
 import CityPage from '../views/CityPage';
 
 /* components styles */
@@ -36,6 +37,15 @@ const weatherBgs = {
 
 class WeatherButton extends Component {
 
+    constructor()
+    {
+        super();
+
+        this.state = {
+            temp: 0
+        }
+    }
+
     removeCity = () => {
         Cities.removeCity(this.props.cityId);
     };
@@ -49,7 +59,17 @@ class WeatherButton extends Component {
             }
         });
     };
-    
+
+    componentWillMount()
+    {
+        Weather.getTempInCity(this.props.cityId).then(temp => this.setState({
+            temp: temp
+        }));
+    }
+    componentWillUnmount()
+    {
+    }
+
     render () {
         var swipeoutBtns = [
             {
@@ -58,17 +78,18 @@ class WeatherButton extends Component {
                 onPress: this.removeCity
             }
         ];
+        var info = Cities.getInfo(this.props.cityId);
         return <Swipeout right={swipeoutBtns}
                          autoClose={true}
                          close={false}
         >
             <TouchableOpacity style={styles.container} onPress={this.navigateToCity}>
-                <Image style={styles.weatherTypeImage} source={weatherBgs[this.props.weatherType ? this.props.weatherType : 'clear']} />
-                <Text style={styles.time}>{this.props.time}</Text>
+                <Image style={styles.weatherTypeImage} source={weatherBgs[info.weatherType ? info.weatherType : 'clear']} />
+                <Text style={styles.time}>{info.time}</Text>
                 {this.props.current ? <Image style={styles.geoposition} source={require('../images/icons/i-geoposition.png')}/> : false }
-                <Text style={styles.city}>{this.props.city}</Text>
-                <Text style={styles.region}>{this.props.region || ''}</Text>
-                <Text style={styles.temp}>{this.props.temp}°</Text>
+                <Text style={styles.city}>{info.city}</Text>
+                <Text style={styles.region}>{info.region || ''}</Text>
+                <Text style={styles.temp}>{this.state.temp}°</Text>
             </TouchableOpacity>
         </Swipeout>;
     }

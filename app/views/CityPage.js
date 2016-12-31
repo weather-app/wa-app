@@ -14,7 +14,8 @@ import {
     ScrollView,
     Text,
     TouchableOpacity,
-    View
+    View,
+    BackAndroid
 } from 'react-native';
 
 import Swiper from 'react-native-swiper';
@@ -31,6 +32,23 @@ import Cities from '../Cities';
 const styles = require('../../app/styles/')('cityPage');
 
 class CityPage extends Component {
+
+    backListener = () => {
+        if (this.props.navigator && this.props.navigator.getCurrentRoutes().length > 1) {
+            this.props.navigator.pop();
+            return true;
+        }
+        return false;
+    };
+
+    componentWillMount()
+    {
+        BackAndroid.addEventListener('hardwareBackPress',this.backListener);
+    }
+    componentWillUnmount()
+    {
+        BackAndroid.removeEventListener('hardwareBackPress',this.backListener);
+    }
 
     render () {
 
