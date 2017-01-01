@@ -8,6 +8,7 @@
   "dependencies": {
     "react": "^15.4.1",
     "react-native": "^0.39.2",
+    "react-native-heading": "^1.0.0",
     "react-native-swipeout": "git+https://github.com/dancormier/react-native-swipeout.git",
     "react-native-swiper": "^1.5.4"
   }

@@ -38,27 +38,26 @@ class StartButton extends Component {
             toValue: 100,
             duration: 3000
         }).start();
+
         setTimeout(() => {
-            this.setDegrees(240);
-        }, 5000)
+            this.setState({
+                prevDegrees: this.state.degrees,
+                degrees: 240
+            });
+        }, 5000);
     }
 
-    setDegrees (newAngle)
-    {
-        this.setState(prevState => ({
-            ...prevState,
-            _animatedValue: new Animated.Value(0),
-            prevDegrees: prevState.degrees,
-            degrees: newAngle
-        }));
-
-        Animated.timing(
-            this.state._animatedValue,
-            {
-                toValue: 100,
-                duration: 3000
-            }).start();
+    componentWillUpdate(nextProps, nextState) {
+        if (this.state.degrees !== nextState.degrees) {
+            Animated.timing(
+                this.state._animatedValue,
+                {
+                    toValue: 100,
+                    duration: 3000
+                }).start();
+        }
     }
+
 
     render () {
 
