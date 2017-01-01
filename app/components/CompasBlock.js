@@ -28,7 +28,8 @@ class StartButton extends Component {
         super(props);
         this.state = {
             _animatedValue: new Animated.Value(0),
-            degrees: 120
+            degrees: 120,
+            prevDegrees: 0
         }
     }
 
@@ -38,11 +39,25 @@ class StartButton extends Component {
             duration: 3000
         }).start();
         setTimeout(() => {
-            this.setState({
-                degrees: 240
-
-            });
+            this.setDegrees(240);
         }, 5000)
+    }
+
+    setDegrees (newAngle)
+    {
+        this.setState(prevState => ({
+            ...prevState,
+            _animatedValue: new Animated.Value(0),
+            prevDegrees: prevState.degrees,
+            degrees: newAngle
+        }));
+
+        Animated.timing(
+            this.state._animatedValue,
+            {
+                toValue: 100,
+                duration: 3000
+            }).start();
     }
 
     render () {
@@ -57,7 +72,7 @@ class StartButton extends Component {
                         source={require('../images/bg/bg-compas-external.png')}
                         style={Object.assign({transform: [{rotate: this.state._animatedValue.interpolate({
                             inputRange: [0, 100],
-                            outputRange: ['0deg', `${this.state.degrees}deg`]
+                            outputRange: [`${this.state.prevDegrees}deg`, `${this.state.degrees}deg`]
                         })}] }, styles.imageExternal)}
                     />
                     <Animated.Image
