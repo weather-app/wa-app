@@ -41,7 +41,8 @@ class StartButton extends Component {
 
         setTimeout(() => {
             this.setState({
-                prevDegrees: this.state.degrees,
+                _animatedValue: new Animated.Value(0),
+                prevDegrees: 120,
                 degrees: 240
             });
         }, 5000);
