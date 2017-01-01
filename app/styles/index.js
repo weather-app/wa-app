@@ -16,6 +16,7 @@ const styleFiles = {
     cityListElement: require('./cityListElement'),
     citiesList: require('./citiesList'),
     cityPage: require('./cityPage'),
+    compasBlock: require('./compasBlock'),
     dayWeatherBlock: require('./dayWeatherBlock'),
     weekWeatherBlock: require('./weekWeatherBlock'),
     cityInfo: require('./cityInfo'),

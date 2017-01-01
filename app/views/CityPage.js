@@ -25,6 +25,7 @@ import Swiper from 'react-native-swiper';
 import DayWeatherBlock from '../components/DayWeatherBlock';
 import WeekWeatherBlock from '../components/WeekWeatherBlock';
 import CityInfo from '../components/CityInfo';
+import CompasBlock from '../components/CompasBlock';
 import Cities from '../Cities';
 
 /* components styles */
@@ -68,6 +69,7 @@ class CityPage extends Component {
                                 <CityInfo cityId={city.cityId}/>
 
                                 <ScrollView>
+                                    <CompasBlock />
                                     <DayWeatherBlock cityId={city.cityId} />
 
                                     <WeekWeatherBlock cityId={city.cityId} />
