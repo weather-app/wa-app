@@ -28,37 +28,36 @@ class StartButton extends Component {
         super(props);
         this.state = {
             _animatedValue: new Animated.Value(0),
-            degrees: 120,
-            prevDegrees: 0
+            degrees: 120
         }
     }
 
     componentDidMount () {
+
         Animated.timing(this.state._animatedValue, {
-            toValue: 100,
-            duration: 3000
+            toValue: this.state.degrees,
+            duration: 15 * Math.abs(0 - this.state.degrees)
         }).start();
 
         setTimeout(() => {
-            this.setState({
-                _animatedValue: new Animated.Value(0),
-                prevDegrees: 120,
+            this.setState((prevState) => ({
+                ...prevState,
                 degrees: 240
-            });
+            }));
         }, 5000);
     }
 
     componentWillUpdate(nextProps, nextState) {
         if (this.state.degrees !== nextState.degrees) {
+            this.state._animatedValue.setValue(this.state.degrees);
             Animated.timing(
                 this.state._animatedValue,
                 {
-                    toValue: 100,
-                    duration: 3000
+                    toValue: nextState.degrees,
+                    duration: 15 * Math.abs(this.state.degrees - nextState.degrees)
                 }).start();
         }
     }
-
 
     render () {
 
@@ -71,8 +70,8 @@ class StartButton extends Component {
                     <Animated.Image
                         source={require('../images/bg/bg-compas-external.png')}
                         style={Object.assign({transform: [{rotate: this.state._animatedValue.interpolate({
-                            inputRange: [0, 100],
-                            outputRange: [`${this.state.prevDegrees}deg`, `${this.state.degrees}deg`]
+                            inputRange: [0, 360],
+                            outputRange: [`0deg`, `360deg`]
                         })}] }, styles.imageExternal)}
                     />
                     <Animated.Image
