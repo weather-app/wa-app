@@ -26,31 +26,16 @@ const styles = require('../../app/styles/')('compasBlock');
 
 
 class StartButton extends Component {
-    _animatedValue;
 
     constructor (props) {
         super(props);
         this.state = {
             _animatedValue: new Animated.Value(0),
-            degrees: 120
+            degrees: 0,
         }
     }
 
     componentDidMount () {
-
-        Animated.timing(this.state._animatedValue, {
-            toValue: this.state.degrees,
-            duration: 15 * Math.abs(0 - this.state.degrees)
-        }).start();
-
-        setTimeout(() => {
-            this.setState((prevState) => ({
-                ...prevState,
-                degrees: 240
-            }));
-        }, 5000);
-
-
         ReactNativeHeading.start(1)
             .then(didStart => {
                 this.setState({
@@ -59,7 +44,10 @@ class StartButton extends Component {
             });
 
         DeviceEventEmitter.addListener('headingUpdated', data => {
-            alert(data.heading);
+            this.setState((prevState) => ({
+                ...prevState,
+                degrees: data.heading
+            }));
         });
 
     }
@@ -98,7 +86,10 @@ class StartButton extends Component {
                     />
                     <Animated.Image
                         source={require('../images/bg/bg-compas-internal.png')}
-                        style={styles.imageInternal}
+                        style={Object.assign({transform: [{rotate: this.state._animatedValue.interpolate({
+                            inputRange: [0, 360],
+                            outputRange: [`0deg`, `360deg`]
+                        })}] }, styles.imageInternal)}
                     />
                 </View>
 
