@@ -10,9 +10,13 @@ import React, {Component} from 'react';
 
 import {
     Animated,
+    DeviceEventEmitter,
     Text,
     View
 } from 'react-native';
+
+const ReactNativeHeading = require('react-native-heading');
+
 
 /* custom components import */
 
@@ -46,6 +50,24 @@ class StartButton extends Component {
                 degrees: 240
             });
         }, 5000);
+
+
+        ReactNativeHeading.start(1)
+            .then(didStart => {
+                this.setState({
+                    headingIsSupported: didStart,
+                })
+            });
+
+        DeviceEventEmitter.addListener('headingUpdated', data => {
+            alert(data.heading);
+        });
+
+    }
+
+    componentWillUnmount () {
+        ReactNativeHeading.stop();
+        DeviceEventEmitter.removeAllListeners('headingUpdated');
     }
 
     componentWillUpdate(nextProps, nextState) {
